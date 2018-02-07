@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
+import { Route } from 'react-router-dom';
+import { Home, About, Counter } from './components/pages';
+import TopMenu from './components/menus/TopMenu';
 import './App.css';
 
 class App extends Component {
@@ -9,13 +12,10 @@ class App extends Component {
         <Helmet>
           <title>React App Starter</title>
         </Helmet>
-        <header className="App-header">
-          <img src={'assets/logo.svg'} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <TopMenu/>
+        <Route exact={true} path="/" component={Home}/>
+        <Route path="/about" component={About}/>
+        <Route path="/counter" component={Counter}/>
       </div>
     );
   }
