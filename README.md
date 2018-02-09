@@ -11,5 +11,5 @@ This app is for configuring the initial environment when starting the React proj
 + semantic-ui
 + react-helmet
 + react-hot-loader
-+ loadable-component
++ react-loadable
 + express(for SSR)

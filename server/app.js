@@ -8,7 +8,15 @@ const fs = require('fs')
 
 require('babel-register')({
   ignore: /\/(build|node_modules)\//,
-  presets: ['env', 'react-app']
+  presets: ['env', 'react-app', 'react'],
+  plugins: [
+    "react-loadable/babel",
+    "dynamic-import-node",
+    "syntax-dynamic-import",
+    // ["import-inspector", {
+    //   "serverSideRequirePath": true
+    // }]
+  ]
 })
 
 // routes
