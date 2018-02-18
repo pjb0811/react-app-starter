@@ -1,34 +1,59 @@
-const app = require('./app')
+require('ignore-styles');
 
-const PORT = process.env.PORT || 3000;
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
+const express = require('express');
+const serialize = require('serialize-javascript');
+const app = express();
+const server = http.createServer(app);
 
-// Why don't I need http createServer
-app.listen(PORT, ()=>{
-  console.log(`App listening on port ${PORT}!`)
-})
-app.on('error', onError)
+require('babel-register')({
+  ignore: /\/(build|node_modules)\//,
+  presets: ['env', 'react-app', 'react'],
+  plugins: [
+    "react-loadable/babel",
+    "dynamic-import-node",
+    "syntax-dynamic-import",
+    // ["import-inspector", {
+    //   "serverSideRequirePath": true
+    // }]
+  ]
+});
 
-function onError(error) {
-  if (error.syscall !== 'listen') {
-    throw error;
-  }
+const App = require('../src/server/render');
 
-  var bind = typeof PORT === 'string'
-    ? 'Pipe ' + PORT
-    : 'Port ' + PORT;
+const staticFiles = [
+  '/static/*',
+  '/asset-manifest.json',
+  '/manifest.json',
+  '/service-worker.js',
+  '/favicon.ico',
+  '/assets/*',
+];
 
-  // handle specific listen errors with friendly messages
-  switch (error.code) {
-    case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
-      process.exit(1);
-      break;
-    case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
-      process.exit(1);
-      break;
-    default:
-      throw error;
-  }
-}
+staticFiles.forEach(file => {
+  app.get(file, (req, res) => {
+    const filePath = path.join(__dirname, '../build', req.url);
+    res.sendFile(filePath);
+  });
+});
 
+app.get('*', async (req, res) => {
+  const template = path.join(__dirname, '../build/index.html');
+  const htmlData = fs.readFileSync(template).toString();
+  const rendered = App.default(req.url);
+  const { html, helmet, state } = await rendered;
+  const renderedHtml = htmlData
+    .replace(
+      '<div id="root"></div>',
+      `<div id="root">${html}</div><script>window.__PRELOADED_STATE__=${serialize(state)}</script>`
+    )
+    .replace(
+      '<meta helmet>',
+      `${helmet.title.toString()}${helmet.meta.toString()}${helmet.link.toString()}`
+    );
+  res.status(200).send(renderedHtml);
+});
+
+server.listen(3000);
