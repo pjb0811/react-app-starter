@@ -5,6 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const express = require('express');
 const serialize = require('serialize-javascript');
+const Loadable = require('react-loadable');
 const app = express();
 const server = http.createServer(app);
 
@@ -56,4 +57,8 @@ app.get('*', async (req, res) => {
   res.status(200).send(renderedHtml);
 });
 
-server.listen(3000);
+Loadable.preloadAll().then(() => {
+  server.listen(3000, () => {
+    console.log('Running on http://localhost:3000/');
+  });
+});
