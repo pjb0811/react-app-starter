@@ -24,7 +24,7 @@ OS 환경에 맞는 [nodejs](https://nodejs.org/ko/) 설치가 필요합니다.
   - semantic-ui-css
   - semantic-ui-react
 
-- **Server Side Rendering(for web app)**
+- **Server Side Rendering**
   - express
 
 - **Module Loader/bundler**
