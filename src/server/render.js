@@ -2,9 +2,16 @@ import * as React from 'react';
 import * as ReactDOMServer from 'react-dom/server';
 import { StaticRouter } from 'react-router';
 import App from '../App';
-import { Provider } from 'react-redux';
 import { Helmet } from 'react-helmet';
-import store from '../redux/store';
+
+// redux
+// import { Provider } from 'react-redux';
+// import store from '../redux/store';
+
+// mobx
+import { Provider } from 'mobx-react';
+import Store from '../mobx/Store';
+const store = new Store();
 
 const render = async (location) => {
   const helmet = Helmet.renderStatic();
