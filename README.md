@@ -8,6 +8,7 @@ OS 환경에 맞는 [nodejs](https://nodejs.org/ko/) 설치가 필요합니다.
 - **React**
   - react
   - create-react-app
+    - react-app-rewired
   - react-router@v4
   - redux
     - react-redux
@@ -49,14 +50,11 @@ OS 환경에 맞는 [nodejs](https://nodejs.org/ko/) 설치가 필요합니다.
 ```
   npm run build
 ```
-### 개발 소스 빌드 후 SSR 서버 실행
+### 소스 빌드 후 SSR 서버 실행
 ```
   npm run serve
 ```
-### 배포 소스 빌드 후 SSR 서버 실행
-```
-  npm run server:prod
-```
+
 ## 4. 파일 정보 및 목록 (File Manifest)
 ## 5. 저작권 및 사용권 정보 (Copyright / End User License)
 MIT © [pjb0811](http://github.com/pjb0811)
