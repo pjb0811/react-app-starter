@@ -9,11 +9,12 @@ import { Helmet } from 'react-helmet';
 // import store from '../redux/store';
 
 // mobx
+import { toJS } from 'mobx';
 import { Provider } from 'mobx-react';
 import Store from '../mobx/Store';
-const store = new Store();
 
 const render = async (location) => {
+  const store = new Store();
   const helmet = Helmet.renderStatic();
   const context = {};
 
@@ -27,7 +28,10 @@ const render = async (location) => {
 
   return {
     html,
-    state: store.getState(),
+    // redux
+    // state: store.getState(),
+    // mobx
+    state: toJS(store),
     helmet,
   };
 };

@@ -16,6 +16,7 @@ require('babel-register')({
     "react-loadable/babel",
     "dynamic-import-node",
     "syntax-dynamic-import",
+    "transform-decorators-legacy"
     // ["import-inspector", {
     //   "serverSideRequirePath": true
     // }]

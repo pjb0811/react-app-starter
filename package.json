@@ -12,7 +12,7 @@
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-app-rewired eject",
-    "serve": "yarn build && node server/index.js"
+    "serve": "yarn build && NODE_ENV=development node server/index.js"
   },
   "devDependencies": {
     "axios": "^0.18.0",

@@ -6,8 +6,8 @@ import App from '../App';
 // import store from '../redux/store';
 
 // mobx
-import Store from '../mobx/Store';
 import { Provider } from 'mobx-react';
+import Store from '../mobx/Store';
 const store = new Store();
 
 const Root = () => (

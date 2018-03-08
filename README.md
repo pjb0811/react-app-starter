@@ -50,7 +50,7 @@ OS 환경에 맞는 [nodejs](https://nodejs.org/ko/) 설치가 필요합니다.
 ```
   npm run build
 ```
-### 소스 빌드 후 SSR 서버 실행
+### 소스 빌드 후 개발 서버 실행
 ```
   npm run serve
 ```
