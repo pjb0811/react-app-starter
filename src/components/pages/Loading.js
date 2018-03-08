@@ -1,19 +1,11 @@
 import * as React from 'react';
 
-const Loading = (props) => {
-  if (props.error) {
-    // When the loader has errored
-    return <div>Error!</div>;
-  } else if (props.timedOut) {
-    // When the loader has taken longer than the timeout
-    return <div>Taking a long time...</div>;
-  } else if (props.pastDelay) {
-    // When the loader has taken longer than the delay
-    return <div>Loading...</div>;
-  } else {
-    // When the loader has just started
-    return null;
-  }
+const Loading = () => {
+  return (
+    <div className="ui active inverted dimmer">
+      <div className="ui text loader">Loading</div>
+    </div>
+  );
 };
 
 export default Loading;
