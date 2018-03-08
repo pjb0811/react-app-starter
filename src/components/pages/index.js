@@ -15,5 +15,6 @@ const loadableComponent = (component) => {
 
 export const Home = loadableComponent('./Home');
 export const About = loadableComponent('./About');
-export const Counter = loadableComponent('./Counter');
+export const ReduxExample = loadableComponent('./ReduxExample');
+export const MobxExample = loadableComponent('./MobxExample');
 

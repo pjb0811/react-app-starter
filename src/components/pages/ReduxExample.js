@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import * as counterActions from '../../redux/modules/counter';
 import * as postActions from '../../redux/modules/post';
 
-class Counter extends React.Component {
+class ReduxExample extends React.Component {
   componentWillMount() {
     const { counter } = this.props;
     this.getPost(counter);
@@ -60,4 +60,4 @@ export default connect(
     CounterActions: bindActionCreators(counterActions, dispatch),
     PostActions: bindActionCreators(postActions, dispatch)
   })
-)(Counter);
+)(ReduxExample);
