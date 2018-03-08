@@ -14,13 +14,13 @@ OS 환경에 맞는 [nodejs](https://nodejs.org/ko/) 설치가 필요합니다.
   - react-hot-loader@v4
   - react-loadable
 
-- **Redux**
-  - react-redux
-  - redux-actions
-  - redux-thunk
-  - redux-logger
-  - redux-promise-middleware
-  - immutable
+- ~~**Redux**~~
+  - ~~react-redux~~
+  - ~~redux-actions~~
+  - ~~redux-thunk~~
+  - ~~redux-logger~~
+  - ~~redux-promise-middleware~~
+  - ~~immutable~~
 
 - **MobX**
   - mobx-react
