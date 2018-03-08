@@ -10,18 +10,20 @@ OS 환경에 맞는 [nodejs](https://nodejs.org/ko/) 설치가 필요합니다.
   - create-react-app
     - react-app-rewired
   - react-router@v4
-  - redux
-    - react-redux
-    - redux-actions
-    - redux-thunk
-    - redux-logger
-    - redux-promise-middleware
-    - immutable
-  - MobX
-    - mobx-react
   - react-helmet
   - react-hot-loader@v4
   - react-loadable
+
+- **Redux**
+  - react-redux
+  - redux-actions
+  - redux-thunk
+  - redux-logger
+  - redux-promise-middleware
+  - immutable
+
+- **MobX**
+  - mobx-react
 
 - **CSS Framework**
   - semantic-ui-css
@@ -56,6 +58,20 @@ OS 환경에 맞는 [nodejs](https://nodejs.org/ko/) 설치가 필요합니다.
 ```
 
 ## 4. 파일 정보 및 목록 (File Manifest)
+```
++-- server
+|   +-- index.js
++-- src
+|   +-- client
+|       +-- Root.js
+|   +-- components
+|   +-- mobx
+|   +-- redux
+|   +-- server
+|       +-- render.js
+|   +-- App.js
+|   +-- index.js
+```
 ## 5. 저작권 및 사용권 정보 (Copyright / End User License)
 MIT © [pjb0811](http://github.com/pjb0811)
 ## 6. 배포자 및 개발자의 연락처 정보 (Contact Information)
