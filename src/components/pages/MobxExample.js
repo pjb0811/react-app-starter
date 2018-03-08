@@ -6,9 +6,10 @@ import { observer, inject } from 'mobx-react';
 class MobxExample extends React.Component {
   render() {
     const { store } = this.props;
+
     return (
       <div>
-        <h1>{ store.count }</h1>
+        <h1>{ store.counter }</h1>
         <button
           onClick={store.increase}>
           +
