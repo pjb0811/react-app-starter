@@ -1,9 +1,9 @@
 # react-app-starter
 Starter Kit for projects using React.
 
-## 1. 컴퓨터 구성 / 필수 조건 안내 (Prerequisites)
+## 1. Prerequisites
 You need to install [nodejs](https://nodejs.org/) for your OS environment.
-### 패키지 구성
+### Package configuration
 - **React**
   - react
   - create-react-app
