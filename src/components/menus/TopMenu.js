@@ -8,7 +8,7 @@ const TopMenu = () => {
         <NavLink exact={true} to="/" className="item" activeClassName="active">Home</NavLink>
         <NavLink to="/about" className="item" activeClassName="active">About</NavLink>
         {/* <NavLink to="/mobxExample" className="item" activeClassName="active">mobx example</NavLink> */}
-        <NavLink to="/reduxExample" className="item" activeClassName="active">redux example</NavLink>
+        <NavLink to="/reduxThunkExample" className="item" activeClassName="active">redux-thunk example</NavLink>
       </div>
     </div>
   );

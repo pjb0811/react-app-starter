@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as counterActions from '../../redux/reducers/counter';
-import * as postActions from '../../redux/reducers/post';
 
-class ReduxExample extends React.Component {
+import * as counterActions from '../../redux-thunk/reducers/counter';
+import * as postActions from '../../redux-thunk/reducers/post';
+
+class ReduxThunkExample extends React.Component {
   componentWillMount() {
     const { counter } = this.props;
     this.getPost(counter);
@@ -33,8 +34,8 @@ class ReduxExample extends React.Component {
     return (
       <div>
       <h1>{counter}</h1>
-      <button onClick={CounterActions.increment}>+</button>
-      <button onClick={CounterActions.decrement}>-</button>
+      <button onClick={CounterActions.incrementAsync}>+</button>
+      <button onClick={CounterActions.decrementAsync}>-</button>
       {
         result.pending ?
           <h2>Loading...</h2> :
@@ -60,4 +61,4 @@ export default connect(
     CounterActions: bindActionCreators(counterActions, dispatch),
     PostActions: bindActionCreators(postActions, dispatch)
   })
-)(ReduxExample);
+)(ReduxThunkExample);

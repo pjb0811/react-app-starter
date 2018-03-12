@@ -2,11 +2,11 @@ import * as React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import App from '../App';
 
-// redux
+// redux-thunk
 import { Provider  } from 'react-redux';
-import store from '../redux/store';
+import store from '../redux-thunk/store';
 
-// mobx
+// // mobx
 // import { Provider } from 'mobx-react';
 // import Store from '../mobx/Store';
 // const store = new Store();

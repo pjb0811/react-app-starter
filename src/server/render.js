@@ -4,9 +4,9 @@ import { StaticRouter } from 'react-router';
 import App from '../App';
 import { Helmet } from 'react-helmet';
 
-// // redux
+// // redux-thunk
 import { Provider } from 'react-redux';
-import store from '../redux/store';
+import store from '../redux-thunk/store';
 
 // // mobx
 // import { toJS } from 'mobx';
@@ -28,7 +28,7 @@ const render = async (location) => {
 
   return {
     html,
-    state: store.getState(),  // redux
+    state: store.getState(),  // redux-thunk
     // state: toJS(store),    // mobx
     helmet,
   };
