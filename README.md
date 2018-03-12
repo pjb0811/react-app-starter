@@ -1,7 +1,7 @@
 # react-app-starter
 Starter Kit for projects using React.
 
-## 1. Prerequisites
+## Prerequisites
 You need to install [nodejs](https://nodejs.org/) for your OS environment.
 ### Package configuration
 - **React**
@@ -15,10 +15,10 @@ You need to install [nodejs](https://nodejs.org/) for your OS environment.
 - **Redux**
   - react-redux
   - redux-actions
-  - redux-thunk
-  - redux-saga
   - redux-logger
-  - redux-promise-middleware
+  - redux-thunk
+    - redux-promise-middleware
+  - redux-saga
   - immutable
 - **MobX**
   - mobx-react
@@ -32,13 +32,13 @@ You need to install [nodejs](https://nodejs.org/) for your OS environment.
 - **Package Manager**
   - yarn
 
-## 2. Installation Process
+## Installation Process
 ### Installing the package
 ```
   npm install
 ```
 
-## 3. Getting Started
+## Getting Started
 ### Run local server
 ```
   npm run start
@@ -100,7 +100,10 @@ const render = async (location) => {
 };
 ```
 
-## 4. File Manifest
+### SSR settings for async data.
+Planned to proceed.
+
+## File Manifest
 ```
 +-- server
 |   +-- index.js
@@ -127,15 +130,15 @@ const render = async (location) => {
 |   +-- index.js
 ```
 
-## 5. Copyright / End User License
+## Copyright / End User License
 MIT © [pjb0811](http://github.com/pjb0811)
 
-## 6. Contact Information
+## Contact Information
 - [pjb0811@gmail.com](mailto:pjb0811@gmail.com)
 - [http://github.com/pjb0811](http://github.com/pjb0811)
 
 <!--
-## 7. 알려진 버그 (Known Issues)
-## 8. 문제 발생에 대한 해결책 (Troubleshooting)
-## 9. 크레딧 (Credit)
+## Known Issues
+## Troubleshooting
+## redit
 -->
