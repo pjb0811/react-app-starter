@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import { Route } from 'react-router-dom';
 import {
-  Home, About, ReduxThunkExample, MobxExample
+  Home, About, ReduxSagaExample, ReduxThunkExample, MobxExample
 } from './components/pages';
 import TopMenu from './components/menus/TopMenu';
 import './App.css';
@@ -17,6 +17,7 @@ class App extends Component {
         <TopMenu/>
         <Route exact={true} path="/" component={Home}/>
         <Route path="/about" component={About}/>
+        <Route path="/reduxSagaExample" component={ReduxSagaExample}/>
         <Route path="/reduxThunkExample" component={ReduxThunkExample}/>
         <Route path="/mobxExample" component={MobxExample}/>
       </div>

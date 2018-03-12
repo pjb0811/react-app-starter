@@ -2,9 +2,13 @@ import * as React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import App from '../App';
 
-// redux-thunk
-import { Provider  } from 'react-redux';
-import store from '../redux-thunk/store';
+// // redux-thunk
+// import { Provider } from 'react-redux';
+// import store from '../redux-thunk/store';
+
+// redux-saga
+import { Provider } from 'react-redux';
+import store from '../redux-saga/store';
 
 // // mobx
 // import { Provider } from 'mobx-react';
@@ -13,7 +17,10 @@ import store from '../redux-thunk/store';
 
 const Root = () => (
   <BrowserRouter>
-    <Provider store={store}>
+    {/* redux-saga */}
+    <Provider store={store()}>
+    {/* redux-thunk, mobx */}
+    {/* <Provider store={store}> */}
       <App/>
     </Provider>
   </BrowserRouter>

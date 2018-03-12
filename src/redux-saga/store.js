@@ -13,6 +13,8 @@ export default function configureStore(initialState) {
       sagaMiddleware, createLogger()
     )
   );
+  // ssr testing
+  // store.runSaga = sagaMiddleware.run;
   sagaMiddleware.run(rootSaga);
   return store;
 };
