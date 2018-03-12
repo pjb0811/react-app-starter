@@ -5,16 +5,16 @@ import App from '../App';
 import { Helmet } from 'react-helmet';
 
 // // redux
-// import { Provider } from 'react-redux';
-// import store from '../redux/store';
+import { Provider } from 'react-redux';
+import store from '../redux/store';
 
-// mobx
-import { toJS } from 'mobx';
-import { Provider } from 'mobx-react';
-import Store from '../mobx/Store';
+// // mobx
+// import { toJS } from 'mobx';
+// import { Provider } from 'mobx-react';
+// import Store from '../mobx/Store';
 
 const render = async (location) => {
-  const store = new Store();  //mobx
+  // const store = new Store();  //mobx
   const helmet = Helmet.renderStatic();
   const context = {};
 
@@ -28,8 +28,8 @@ const render = async (location) => {
 
   return {
     html,
-    // state: store.getState(),  // redux
-    state: toJS(store),    // mobx
+    state: store.getState(),  // redux
+    // state: toJS(store),    // mobx
     helmet,
   };
 };

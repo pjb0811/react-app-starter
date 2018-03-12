@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as counterActions from '../../redux/modules/counter';
-import * as postActions from '../../redux/modules/post';
+import * as counterActions from '../../redux/reducers/counter';
+import * as postActions from '../../redux/reducers/post';
 
 class ReduxExample extends React.Component {
   componentWillMount() {

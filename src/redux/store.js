@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware } from 'redux';
-import modules from './modules';
+import reducers from './reducers';
 import { createLogger } from 'redux-logger';
 import ReduxThunk from 'redux-thunk';
 import promiseMiddleware from 'redux-promise-middleware';
@@ -10,7 +10,7 @@ const customizedPromiseMiddleware = promiseMiddleware({
 });
 
 const store = createStore(
-  modules,
+  reducers,
   applyMiddleware(logger, ReduxThunk, customizedPromiseMiddleware)
 );
 
