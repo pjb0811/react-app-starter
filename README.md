@@ -16,6 +16,7 @@ You need to install [nodejs](https://nodejs.org/) for your OS environment.
   - react-redux
   - redux-actions
   - redux-thunk
+  - redux-saga
   - redux-logger
   - redux-promise-middleware
   - immutable
@@ -50,13 +51,16 @@ You need to install [nodejs](https://nodejs.org/) for your OS environment.
 ```
   npm run serve
 ```
-### Change the state management library(MobX <-> Redux)
+### Change the state management library(mobx <-> redux-saga <-> redux-thunk)
 #### src/client/Root.js
 ```
-// redux
-...
+// redux-saga
 import { Provider  } from 'react-redux';
-import store from '../redux/store';
+import store from '../redux-saga/store';
+
+// redux-thunk
+import { Provider  } from 'react-redux';
+import store from '../redux-thunk/store';
 
 // mobx
 import { Provider } from 'mobx-react';
@@ -67,9 +71,14 @@ const store = new Store();
 ```
 #### src/server/render.js
 ```
-// redux
+// redux-saga
+import { Provider  } from 'react-redux';
+import configureStore from '../redux-saga/store';
+const store = configureStore();
+
+// redux-thunk
 import { Provider } from 'react-redux';
-import store from '../redux/store';
+import store from '../redux-thunk/store';
 
 // mobx
 import { toJS } from 'mobx';
@@ -82,7 +91,7 @@ const render = async (location) => {
   ....
   return {
     html,
-    // redux
+    // redux-thunk, redux-saga
     state: store.getState(),
     // mobx
     state: toJS(store),
@@ -103,8 +112,14 @@ const render = async (location) => {
 |       +-- pages
 |   +-- mobx
 |       +-- Store.jsx
-|   +-- redux
-|       +-- modules
+|   +-- redux-saga
+|       +-- actions
+|       +-- api
+|       +-- reducers
+|       +-- sagas.js
+|       +-- store.js
+|   +-- redux-thunk
+|       +-- reducers
 |       +-- store.js
 |   +-- server
 |       +-- render.js
