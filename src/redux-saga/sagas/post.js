@@ -5,10 +5,10 @@ import API from '../api';
 function* runRequestSuggest(action) {
   try {
     const { data } = yield call(API.getPost, action.payload);
-    yield put({ type: post.SUCCESS_POST, data });
+    yield put(post.successPost({ data }));
   }
   catch(error) {
-    yield put({ type: post.FAILURE_POST, error });
+    yield put(post.failurePost({ error }));
   }
 }
 function* handleRequestPost() {
